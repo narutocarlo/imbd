@@ -33,7 +33,8 @@ exports.createUser = async (req, res,nxt) => {
 }
 
 exports.loginUser = async (req, res) => {
-    const {email} = req.body
+    const { email } = req.body
+    console.log(req.body);
     const isUersEmailExist = await Users.findOne({ email })
     if (!isUersEmailExist) {
         return res.status(200).json({
@@ -50,7 +51,6 @@ exports.loginUser = async (req, res) => {
         })
     }
     const token = getJWT({ id: isUersEmailExist.id })
-    
     res.status(200).cookie("token",token).json({
         success: true,
         massage:"logged in"

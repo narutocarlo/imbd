@@ -1,0 +1,17 @@
+
+.navShadow{
+  box-shadow: 5px 10px 20px gray;
+  
+}
+.logo{
+  height: 50px;
+  width: 50px;
+  border-radius: 40%;
+  
+}
+
+.movies{
+  flex-wrap: wrap;
+  
+}
+
